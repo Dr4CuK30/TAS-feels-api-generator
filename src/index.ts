@@ -1,7 +1,19 @@
-import { FeedsModel } from "./model/feeds.model";
+import { FeedsModel } from "./metamodel/feeds.metamodel";
 import fs from "fs";
 import generateProject from "./processes/generation";
-const path = "model.json";
+import installDependences from "./processes/installDependences";
+import configurateProject from "./processes/configurateProject";
 
-const data: FeedsModel = JSON.parse(fs.readFileSync(path, "utf8"));
-generateProject(data.projectName);
+main();
+
+function main() {
+  startGeneration();
+}
+
+async function startGeneration() {
+  const path = "model.json";
+  const data: FeedsModel = JSON.parse(fs.readFileSync(path, "utf8"));
+  await generateProject(data.projectName);
+  await installDependences(data.projectName, data.connection.dbType);
+  await configurateProject(data);
+}

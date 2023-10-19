@@ -1,9 +1,16 @@
 {
-  "projectName": "Prueba3",
+  "projectName": "Prueba13",
   "connection": {
-    "dbName": "",
-    "dbUser": "",
-    "dbPassword": "",
-    "dbType": ""
+    "dbName": "db",
+    "dbUser": "root",
+    "dbPassword": "secret",
+    "dbType": "postgres",
+    "dbHost": "localhost",
+    "dbPort": 5432
+  },
+  "feedProps": {
+    "name": "string",
+    "createdAt": "Date",
+    "deletedAt": "Date"
   }
 }

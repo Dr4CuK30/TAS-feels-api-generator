@@ -1,4 +1,8 @@
 {
+  "dependencies": {
+    "@nestjs/mapped-types": "*",
+    "fs-extra": "^11.1.1"
+  },
   "name": "tasapp",
   "version": "1.0.0",
   "description": "",
